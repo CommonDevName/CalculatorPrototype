@@ -2,6 +2,7 @@ package Operation;
 
 import Operator.Commands;
 import static samplecalculator.Execution.dataInput;
+import static samplecalculator.Execution.textInput;
 
 /**
  *
@@ -9,16 +10,15 @@ import static samplecalculator.Execution.dataInput;
  */
 public class Equation {
     
+    public static double number;
     public static double equationResult;
+    public static boolean condition = true;
 
     public static double Resolution(){
-        boolean condition = true;
-        double A, B;
         char symbol;
         do{
-            A = dataInput.nextDouble();
-            symbol = dataInput.next().charAt(0);
-            B = dataInput.nextDouble();
+            number = dataInput.nextDouble();
+            symbol = textInput.next().charAt(0);
             switch(symbol){
                 case '+'->{Commands.Plus();}
                 case '-'->{Commands.Minus();}
@@ -27,7 +27,8 @@ public class Equation {
                 case '^'->{Commands.Power();}
                 case '='->{Commands.Equal();}
                 case 'R'->{Commands.PreviousAnswer();}
-                default->{}
+                default->{System.err.println("\nInvalid Symbol"
+                +", please check the documentation.\n");}
             }
         }while(condition);
         return equationResult;
