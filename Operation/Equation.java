@@ -1,5 +1,6 @@
 package Operation;
 
+import Operator.Commands;
 import static samplecalculator.Execution.dataInput;
 
 /**
@@ -17,10 +18,15 @@ public class Equation {
         do{
             A = dataInput.nextDouble();
             symbol = dataInput.next().charAt(0);
-            B = dataInput.nextDouble(); 
+            B = dataInput.nextDouble();
             switch(symbol){
-                case ' '->{}
-            
+                case '+'->{Commands.Plus();}
+                case '-'->{Commands.Minus();}
+                case '*'->{Commands.Times();}
+                case '/'->{Commands.Obleous();}
+                case '^'->{Commands.Power();}
+                case '='->{Commands.Equal();}
+                case 'R'->{Commands.PreviousAnswer();}
                 default->{}
             }
         }while(condition);

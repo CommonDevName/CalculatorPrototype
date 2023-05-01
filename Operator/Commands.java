@@ -6,6 +6,8 @@ package Operator;
  */
 public class Commands {
     
+    
+
     public static void Plus(){
 
     }
@@ -22,7 +24,7 @@ public class Commands {
 
     }
 
-    public static void SquareRoot(){
+    public static void Power(){
 
     }
 
@@ -31,6 +33,6 @@ public class Commands {
     }
 
     public static void PreviousAnswer(){
-        
+
     }
 }
