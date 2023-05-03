@@ -1,45 +1,67 @@
 package Operator;
 
-import Operation.Equation;
+import static Operation.Equation.symbol;
 
 /**
  *
  * @author CommonName(¿)
  */
 public class Commands {
-    
 
-
-    public static void Plus(){
-        Equation.equationResult = Equation.equationResult +
-        Equation.number;
-    }
-
-    public static void Minus(){
-        Equation.equationResult = Equation.equationResult -
-        Equation.number;
-    }
-
-    public static void Times(){
-        Equation.equationResult = Equation.equationResult *
-        Equation.number;
-    }
-
-    public static void Obleous(){
-        Equation.equationResult = Equation.equationResult /
-        Equation.number;
-    }
-
-    public static void Power(){
-        Equation.equationResult = 
-        Math.pow(Equation.equationResult,Equation.number);
-    }
-
-    public static void Equal(){
-        Equation.condition = false;
-    }
-
-    public static void PreviousAnswer(){
-        
+    public static void ChooseCommand(){
+        switch(symbol){
+            case "+"->{}
+            case "+("->{}
+            case ")+"->{}
+            case ")+("->{}
+            case "-"->{}
+            case "-("->{}
+            case ")-"->{}
+            case ")-("->{}
+            case "*"->{}
+            case "*("->{}
+            case ")*"->{}
+            case ")*("->{}
+            case "/"->{}
+            case "/("->{}
+            case ")/"->{}
+            case ")/("->{}
+            case "^"->{}
+            case "^("->{}
+            case ")^"->{}
+            case ")^("->{}
+            case "~"->{}
+            case "~("->{}
+            case ")~"->{}
+            case ")~("->{}
+            case "="->{}
+            case ")="->{}
+            case "+Ans"->{}
+            case ")+Ans"->{}
+            case "Ans+"->{}
+            case "Ans+("->{}
+            case "-Ans"->{}
+            case ")-Ans"->{}
+            case "Ans-"->{}
+            case "Ans-("->{}
+            case "*Ans"->{}
+            case ")*Ans"->{}
+            case "Ans*"->{}
+            case "Ans*("->{}
+            case "/Ans"->{}
+            case ")/Ans"->{}
+            case "Ans/"->{}
+            case "Ans/("->{}
+            case "^Ans"->{}
+            case ")^Ans"->{}
+            case "Ans^"->{}
+            case "Ans^("->{}
+            case "~Ans"->{}
+            case ")~Ans"->{}
+            case "Ans~"->{}
+            case "Ans~("->{}
+            default->{System.err.println("\nInvalid command"
+            +", please check the documentation.\n");}
+        }
     }
 }

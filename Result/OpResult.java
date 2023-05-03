@@ -6,9 +6,9 @@ package Result;
  */
 public class OpResult {
     
-    private double result;
+    private double resultLog;
 
-    public OpResult(double result){
-        this.result = result;
+    public OpResult(double resultLog){
+        this.resultLog = resultLog;
     }
 }

@@ -1,6 +1,7 @@
 package Operation;
 
 import Operator.Commands;
+import Operator.Equal;
 import static samplecalculator.Execution.dataInput;
 import static samplecalculator.Execution.textInput;
 
@@ -10,27 +11,41 @@ import static samplecalculator.Execution.textInput;
  */
 public class Equation {
     
-    public static double number;
-    public static double equationResult;
-    public static boolean condition = true;
+    public static double number, cache;
+    public static double result, resultParenthesis, equationResult;
+    public static boolean condition = true, conditionParenthesis = true;
+    public static String symbol;
 
-    public static double Resolution(){
-        char symbol;
-        do{
-            number = dataInput.nextDouble();
-            symbol = textInput.next().charAt(0);
-            switch(symbol){
-                case '+'->{Commands.Plus();}
-                case '-'->{Commands.Minus();}
-                case '*'->{Commands.Times();}
-                case '/'->{Commands.Obleous();}
-                case '^'->{Commands.Power();}
-                case '='->{Commands.Equal();}
-                case 'R'->{Commands.PreviousAnswer();}
-                default->{System.err.println("\nInvalid Symbol"
-                +", please check the documentation.\n");}
-            }
-        }while(condition);
-        return equationResult;
+    public static void AnswerOutput(){
+        equationResult = EquationInput();
     }
+
+    public static double EquationInput(){
+        do{
+            cache = number;
+            number = dataInput.nextDouble();
+            if(symbol != "=" || symbol != ")="){
+                Commands.ChooseCommand();}
+            else{if(symbol == "="){
+                Equal.Equal();
+            }else{if(symbol != ")="){}}}
+            symbol = textInput.nextLine();
+        }while(condition);
+        return result;
+    }
+
+    public static double EquationInputParenthesis(){
+        do{
+            cache = number;
+            number = dataInput.nextDouble();
+            if(symbol != "=" || symbol != ")="){
+                Commands.ChooseCommand();}
+            else{if(symbol == "="){
+                Equal.Equal();
+            }else{if(symbol != ")="){}}}
+            symbol = textInput.nextLine();
+        }while(conditionParenthesis);
+        return result;
+    }
+
 }
